@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author Branko Ajzele <ajzele@gmail.com>
+ * @license http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <sections>
+        <inchoo_piwik translate="label" module="inchoo_piwik">
+            <label>Piwik Analytics</label>
+            <tab>sales</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>2000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <settings translate="label">
+                    <label>Piwik Analytics Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <active translate="label" module="inchoo_piwik">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>                        
+                        <site_id translate="label" module="inchoo_piwik">
+                            <label>Site ID</label>
+                            <comment><![CDATA[Site ID string provided by "Piwik", i.e. 3.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </site_id>
+                        <piwik_base_url translate="label" module="inchoo_piwik">
+                            <label>Base Url</label>
+                            <comment><![CDATA[Url of the site where "Piwik" is installed and publicly available, i.e. http://piwik.myserver.net/.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </piwik_base_url>      
+                        <piwik_secure_base_url translate="label" module="inchoo_piwik">
+                            <label>Secure Base Url</label>
+                            <comment><![CDATA[Secure (HTTPS) url of the site where "Piwik" is installed and publicly available, i.e. http://piwik.myserver.net/. If no HTTPS, then give HTTP.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </piwik_secure_base_url>                                           
+                    </fields>
+                </settings>
+            </groups>
+        </inchoo_piwik>
+    </sections>
+</config>
