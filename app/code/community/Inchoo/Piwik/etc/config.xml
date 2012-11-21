@@ -30,6 +30,6 @@
                     <file>inchoo_piwik.xml</file>
                 </inchoo_piwik>
             </updates>
-        </layout>
+        </layout>       
     </frontend>       
 </config>

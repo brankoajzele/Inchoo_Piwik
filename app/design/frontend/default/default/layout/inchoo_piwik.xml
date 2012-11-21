@@ -10,5 +10,17 @@
         <reference name="head">
             <block type="inchoo_piwik/tracking_tag" name="inchoo_piwik_tracking_tag" template="inchoo/piwik/tracking/tag.phtml"/>
         </reference>
-    </default>    
+    </default>
+    
+    <checkout_onepage_success>
+        <reference name="before_body_end">
+            <block type="inchoo_piwik/tracking_order_success" name="inchoo_piwik_tracking_order_success" template="inchoo/piwik/tracking/order/success.phtml" />
+        </reference>
+    </checkout_onepage_success>
+    
+    <checkout_multishipping_success>
+        <reference name="before_body_end">
+            <block type="inchoo_piwik/tracking_order_success" name="inchoo_piwik_tracking_order_success" template="inchoo/piwik/tracking/order/success.phtml" />
+        </reference>
+    </checkout_multishipping_success>
 </layout>

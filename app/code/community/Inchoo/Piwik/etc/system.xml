@@ -42,11 +42,20 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                         </site_id>
+                        <token_auth translate="label" module="inchoo_piwik">
+                            <label>Token Auth</label>
+                            <comment><![CDATA[If you want to request data within a script, a crontab, etc. you need to add the parameter to the API calls URLs that require authentication. This is done trough token_auth param. Please obtain this value from piwik.]]></comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </token_auth>
                         <piwik_base_url translate="label" module="inchoo_piwik">
                             <label>Base Url</label>
                             <comment><![CDATA[Url of the site where "Piwik" is installed and publicly available, i.e. http://piwik.myserver.net/.]]></comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>30</sort_order>
+                            <sort_order>40</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
@@ -55,7 +64,7 @@
                             <label>Secure Base Url</label>
                             <comment><![CDATA[Secure (HTTPS) url of the site where "Piwik" is installed and publicly available, i.e. http://piwik.myserver.net/. If no HTTPS, then give HTTP.]]></comment>
                             <frontend_type>text</frontend_type>
-                            <sort_order>40</sort_order>
+                            <sort_order>50</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
