@@ -12,15 +12,39 @@
         </reference>
     </default>
     
+    <catalog_product_view>
+        <reference name="inchoo_piwik_tracking_tag">
+            <block type="inchoo_piwik/tracking_product_page" name="inchoo_piwik_tracking_product_page" template="inchoo/piwik/tracking/product/page.phtml" />
+        </reference>        
+    </catalog_product_view>
+    
+    <catalog_category_default>
+        <reference name="inchoo_piwik_tracking_tag">
+            <block type="inchoo_piwik/tracking_category_page" name="inchoo_piwik_tracking_category_page" template="inchoo/piwik/tracking/category/page.phtml" />
+        </reference>        
+    </catalog_category_default>
+    
+    <catalog_category_layered>
+        <reference name="inchoo_piwik_tracking_tag">
+            <block type="inchoo_piwik/tracking_category_page" name="inchoo_piwik_tracking_category_page" template="inchoo/piwik/tracking/category/page.phtml" />
+        </reference>        
+    </catalog_category_layered>    
+    
+    <checkout_cart_index>
+        <reference name="inchoo_piwik_tracking_tag">
+            <block type="inchoo_piwik/tracking_checkout_cart" name="inchoo_piwik_tracking_checkout_cart" template="inchoo/piwik/tracking/checkout/cart.phtml" />
+        </reference>
+    </checkout_cart_index>
+    
     <checkout_onepage_success>
-        <reference name="before_body_end">
-            <block type="inchoo_piwik/tracking_order_success" name="inchoo_piwik_tracking_order_success" template="inchoo/piwik/tracking/order/success.phtml" />
+        <reference name="inchoo_piwik_tracking_tag">
+            <block type="inchoo_piwik/tracking_checkout_success" name="inchoo_piwik_tracking_checkout_success" template="inchoo/piwik/tracking/checkout/success.phtml" />
         </reference>
     </checkout_onepage_success>
     
     <checkout_multishipping_success>
-        <reference name="before_body_end">
-            <block type="inchoo_piwik/tracking_order_success" name="inchoo_piwik_tracking_order_success" template="inchoo/piwik/tracking/order/success.phtml" />
+        <reference name="inchoo_piwik_tracking_tag">
+            <block type="inchoo_piwik/tracking_checkout_success" name="inchoo_piwik_tracking_checkout_success" template="inchoo/piwik/tracking/checkout/success.phtml" />
         </reference>
     </checkout_multishipping_success>
 </layout>

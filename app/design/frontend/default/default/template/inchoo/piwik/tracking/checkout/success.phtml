@@ -1,0 +1,36 @@
+<?php
+    $_order = Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId());
+    $_orderItems = $_order->getAllItems();
+?>
+<?php foreach ($_orderItems as $_item): ?>   
+<?php 
+
+$product = Mage::getModel('catalog/product')->load($_item->getProductId());
+
+$cats = $product->getCategoryIds();
+$_cats = array();
+
+foreach ($cats as $category_id) {
+    $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+    if (count($_cats) < 5) {
+        $_cats[] = json_encode($_cat->getName());
+    }
+}
+
+?>
+piwikTracker.addEcommerceItem(
+    <?php echo json_encode($_item->getSku()) ?>, // (required) SKU: Product unique identifier
+    <?php echo json_encode($_item->getName()) ?>, // (optional) Product name
+    <?php echo ((empty($_cats) ? '[]' : '['.  implode(',', $_cats).']')) ?>, // (optional) Product category. You can also specify an array of up to 5 categories eg. ["Books", "New releases", "Biography"]
+    <?php echo round($_item->getPrice(), 2) ?>, // (recommended) Product price
+    <?php echo (int)$_item->getQtyOrdered() ?> // (optional, default to 1) Product quantity
+);
+<?php endforeach; ?>
+piwikTracker.trackEcommerceOrder(
+    "<?php echo $_order->getIncrementId() ?>", // (required) Unique Order ID
+    <?php echo round($_order->getBaseGrandTotal(), 2) ?>, // (required) Order Revenue grand total (includes tax, shipping, and subtracted discount)
+    <?php echo round(($_order->getGrandTotal() - $_order->getShippingAmount() - $_order->getShippingTaxAmount()), 2) ?>, // (optional) Order sub total (excludes shipping)
+    <?php echo round($_order->getBaseTaxAmount(), 2) ?>, // (optional) Tax amount
+    <?php echo round($_order->getBaseShippingAmount(), 2) ?>, // (optional) Shipping amount
+    false // (optional) Discount offered (set to false for unspecified parameter)
+);

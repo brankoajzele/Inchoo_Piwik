@@ -1,0 +1,6 @@
+<?php $_category = Mage::registry('current_category') ?>
+piwikTracker.setEcommerceView(
+    productSku = false, // No product on Category page
+    productName = false, // No product on Category page
+    category = <?php echo json_encode($_category->getName()) ?> // Category Page, or array of up to 5 categories
+);

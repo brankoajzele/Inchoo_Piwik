@@ -1,0 +1,20 @@
+<?php $_product = Mage::registry('current_product') ?>
+<?php
+
+$cats = $_product->getCategoryIds();
+$_cats = array();
+
+foreach ($cats as $category_id) {
+    $_cat = Mage::getModel('catalog/category')->load($category_id) ;
+    if (count($_cats) < 5) {
+        $_cats[] = json_encode($_cat->getName());
+    }
+}
+
+?>
+piwikTracker.setEcommerceView(
+    "<?php echo $_product->getSku() ?>", // (required) SKU: Product unique identifier
+    <?php echo json_encode($_product->getName()) ?>, // (optional) Product name
+    <?php echo ((empty($_cats) ? '[]' : '['.  implode(',', $_cats).']')) ?>, // (optional) Product category, or array of up to 5 categories
+    <?php echo round($_product->getPrice(), 2) ?> // (optional) Product Price as displayed on the page
+);
