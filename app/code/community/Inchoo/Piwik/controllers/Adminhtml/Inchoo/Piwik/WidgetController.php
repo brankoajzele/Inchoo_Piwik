@@ -27,10 +27,4 @@ class Inchoo_Piwik_Adminhtml_Inchoo_Piwik_WidgetController extends Mage_Adminhtm
             $this->_redirect('/');            
         }
     }
-
-    public function testAction() 
-    {
-        exit('testAction');
-    }
-
 }
