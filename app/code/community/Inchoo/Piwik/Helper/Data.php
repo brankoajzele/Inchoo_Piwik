@@ -7,6 +7,7 @@ class Inchoo_Piwik_Helper_Data extends Mage_Core_Helper_Data
 {
     const CONFIG_XML_PATH_SETTINGS_ACTIVE = 'inchoo_piwik/settings/active';
     const CONFIG_XML_PATH_SETTINGS_SITE_ID = 'inchoo_piwik/settings/site_id';
+    const CONFIG_XML_PATH_SETTINGS_TOKEN_AUTH = 'inchoo_piwik/settings/token_auth';
     const CONFIG_XML_PATH_SETTINGS_PIWIK_BASE_URL = 'inchoo_piwik/settings/piwik_base_url';
     const CONFIG_XML_PATH_SETTINGS_PIWIK_SECURE_BASE_URL = 'inchoo_piwik/settings/piwik_secure_base_url';
     
@@ -36,6 +37,11 @@ class Inchoo_Piwik_Helper_Data extends Mage_Core_Helper_Data
         return trim($siteId);
     }
     
+    public function getTokenAuth()
+    {
+        return Mage::getStoreConfig(self::CONFIG_XML_PATH_SETTINGS_TOKEN_AUTH); 
+    }
+    
     public function getPiwikBaseUrl()
     {
         $piwikBaseUrl = Mage::getStoreConfig(self::CONFIG_XML_PATH_SETTINGS_PIWIK_BASE_URL);
@@ -46,5 +52,5 @@ class Inchoo_Piwik_Helper_Data extends Mage_Core_Helper_Data
     {
         $piwikSecureBaseUrl = Mage::getStoreConfig(self::CONFIG_XML_PATH_SETTINGS_PIWIK_SECURE_BASE_URL);
         return trim($piwikSecureBaseUrl);
-    }        
+    }
 }

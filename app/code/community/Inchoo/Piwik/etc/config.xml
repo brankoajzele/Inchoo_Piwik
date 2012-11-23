@@ -31,5 +31,16 @@
                 </inchoo_piwik>
             </updates>
         </layout>       
-    </frontend>       
+    </frontend>
+    <admin>
+         <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <inchoo_piwik after="Mage_Adminhtml">Inchoo_Piwik_Adminhtml</inchoo_piwik>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>         
 </config>
